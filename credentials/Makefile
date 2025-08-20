@@ -19,7 +19,7 @@ define Package/credentials
 endef
 
 define Package/credentials/description
-	Ensure the credentials.json file exists
+	Ensure the cloud-tokens.json file exists
 endef
 
 define Build/Compile
@@ -27,7 +27,7 @@ endef
 
 define Package/credentials/install
 	$(INSTALL_DIR) $(1)/etc/config
-	$(INSTALL_BIN) files/credentials.json $(1)/etc/config
+	$(INSTALL_BIN) files/cloud-tokens.json $(1)/etc/config
 endef
 
 $(eval $(call BuildPackage,credentials))

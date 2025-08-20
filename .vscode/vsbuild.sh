@@ -48,7 +48,7 @@ for target_address in "${TARGET_ADDRESSES[@]}"; do
 	echo "${GREEN}Copying to $target_sync_path... ${NC}"
 
 	rsync -r -a -v --chown=root:root wan-manager/files/* root@"$target_address":"$target_sync_path"
-	rsync -r -a -v --chown=root:root credentials/files/credentials.json root@"$target_address":"$mfw_dir"/etc/config/credentials.json
+	rsync -r -a -v --chown=root:root credentials/files/cloud-tokens.json root@"$target_address":"$mfw_dir"/etc/config/cloud-tokens.json
 	# rsync -r -a -v --chown=root:root pyconnector/files/* root@$target_address:/usr/bin
 	# rsync -r -a -v --chown=root:root strongswan-full/files/override.ipsec.init root@$target_address:/etc/init.d/ipsec
 	# rsync -r -a -v --chown=root:root pyconnector/files/pyconnector root@$target_address:/usr/bin/pyconnector
